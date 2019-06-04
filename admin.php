@@ -64,21 +64,32 @@ echo "<table border='2'style='width:100%'>
 <th>Email</th>
 <th>Password</th>
 <th>Number</th>
+<th>Address</th>
+<th>Action </th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
 {
-$uid = $row['user_id'];
+$uid = $row['id'];
 echo "<tr>";
 echo "<td>" . $uid . "</td>";
 echo "<td>" . $row['name'] . "</td>";
 echo "<td>" . $row['email'] . "</td>";
 echo "<td>" . $row['password'] . "</td>";
 echo "<td>" . $row['number'] . "</td>";
+echo "<td>" . $row['Address'] . "</td>";
+echo "<td><button type=\"button\" class=\"btn btn-warning\" style=\"float:right\" ><a href=\"updateUser.php?user=".$uid."\">Edit</a></button></td>";
 echo "</tr>";
 
 }
- 
+
+if(isset($_GET['user']))
+    {
+      $user=$_GET['user'];
+
+      $sel=mysqli_query($con,"select * from users where id='$user'");
+    }
+
 echo "</table>";
 
 mysqli_close($con);
