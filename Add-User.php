@@ -69,6 +69,14 @@ if(isset($_SESSION['valid_user']))
                     <span class="error_msg" id="num_msg"></span>
                 </div>
             </div>
+
+            <div class="row">
+              <div class="col">
+                  <label for="address">* Address:</label>
+                  <input type="address" id="address" name="address" size="30" maxlength="50" required />
+                </div>
+            </div>
+
             <div class="row">
               <div class="col">
                   <label>&nbsp;</label>
