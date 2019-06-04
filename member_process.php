@@ -12,7 +12,10 @@ $password = $_POST['password'];
 echo $password;
 $number = $_POST['number'];
 echo $number;
-$sql= "insert into users (user_id, name, email, password, number) values ('$user_id', '$name', '$email', '$password', '$number')";
+
+$address = $_POST['address'];
+echo $address;
+$sql= "insert into users (user_id, name, email, password, number, Address) values ('$user_id', '$name', '$email', '$password', '$number', '$address')";
 echo $sql."<br>";
             if(mysqli_query($con,$sql))
             { 
