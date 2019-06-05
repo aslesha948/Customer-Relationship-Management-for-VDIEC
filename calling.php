@@ -88,6 +88,7 @@ else
           <th>Contact Number</th>
           <th>Email ID </th>
           <th>Status</th>
+          <th>Comments</th>
           <th>Action </th>
           </tr>";
     while ($cleads=mysqli_fetch_array($res)) 
@@ -103,6 +104,7 @@ else
             echo "<td>" . $cleads['contact'] . "</td>";
             echo "<td>" . $cleads['email'] . "</td>";
             echo "<td>" . $cleads['status'] . "</td>";
+             echo "<td>" . $cleads['comments'] . "</td>";
       
             echo "<td><button type=\"button\" class=\"btn btn-warning\" style=\"float:right\" ><a href=\"update.php?cid=".$cid."\">Edit</a></button></td>";
 
