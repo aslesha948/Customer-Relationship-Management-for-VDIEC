@@ -19,7 +19,10 @@ if(isset($_SESSION['valid_user']))
 {
   $email=$_SESSION['valid_user'];
 ?>
+<div class="container">
 
+<div class="row">
+  <div class="col">
 <?php if(isset($_GET['suc']))
 {?>
   <div class="alert alert-success">
@@ -34,10 +37,7 @@ if(isset($_SESSION['valid_user']))
 </div>
 <?php } 
   ?>
-<div class="container">
 
-<div class="row">
-  <div class="col">
 
 
 <p><a href="Add-User.php" class="button-red"> Add a new User </a></p>
