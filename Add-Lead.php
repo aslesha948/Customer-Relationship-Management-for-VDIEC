@@ -25,20 +25,24 @@ if(isset($_SESSION['valid_user']))
 
 	
 <form action="lead_process.php" method="post">
-         <div class="bg-light mt-3 px-2 member_frm" style="border-radius: 5px; border: solid maroon">
+        <!--  <div class="bg-light mt-3 px-2 member_frm" style="border-radius: 5px; border: solid maroon"> -->
+        <div class="row">
+         <div class="col-md-10">
         	<h1>Add Lead</h1>
 
-            <div class="row">
-                <div class="col">
-                    <label for="lead_id">* ID: </label>
-                    <input type="number" id="lead_id" name="lead_id" size="30" maxlength="50"  required />
+          <!--  <div class="row">
+                <div class="col-md-2" >
+                    <label for="lead_id">* ID: </label></div>
+                    <div class="col-md-8">
+                    <input type="number" id="lead_id" name="lead_id" size="30" maxlength="50" class="form-control" required />
                 </div>
-            </div>
+            </div> -->
          
             <div class="row">
-            	<div class="col">
-                	<label for="name">* Name of the Lead:</label>
-                    <input type="text" id="name" name="name" size="30" maxlength="50" required />
+            	 <div class="col-md-2" >
+                	<label for="name">* Name of the Lead:</label></div>
+                   <div class="col-md-8">
+                    <input type="text" id="name" name="name" size="30" maxlength="50" class="form-control" required />
                 </div>
             </div>
 
@@ -50,9 +54,10 @@ if(isset($_SESSION['valid_user']))
             </div> -->
 
          <div class="row">
-                <div class="col">
-                   <label for="source">* Source:</label>
-                   <select name="source" id="source" required>
+                 <div class="col-md-2" >
+                   <label for="source">* Source:</label></div>
+                    <div class="col-md-8">
+                   <select name="source" id="source" class="form-control" required>
                       <option value = " ">Select One</option>
                       <option value = "Facebook">Facebook</option>
                       <option value = "Education Fair">Education Fair</option>
@@ -62,18 +67,20 @@ if(isset($_SESSION['valid_user']))
             </div> 
 
             <div class="row">
-                <div class="col">
-                    <label for="number">* Contact Number:</label>
-                    <input type="text" id="number" name="number" size="10" maxlength="10" placeholder="10 digits"
+                 <div class="col-md-2" >
+                    <label for="number">* Contact Number:</label></div>
+                     <div class="col-md-8">
+                    <input type="number" id="number" name="number" size="10" maxlength="10" placeholder="10 digits" class="form-control"
                                onChange="checkphoneNumber(document)" required />
                     <span class="error_msg" id="num_msg"></span>
                 </div>
             </div>
 
             <div class="row">
-            	<div class="col">
-                	<label for="email">* Email ID:</label>
-                	<input type="email" id="email" name="email" size="30" maxlength="50" required />
+            	 <div class="col-md-2" >
+                	<label for="email">* Email ID:</label></div>
+                   <div class="col-md-8">
+                	<input type="email" id="email" name="email" size="30" maxlength="50" class="form-control" required />
                 </div>
             </div>
 
@@ -85,9 +92,10 @@ if(isset($_SESSION['valid_user']))
             </div> -->
            
          <div class="row">
-                <div class="col">
-                   <label for="status">* Status:</label>
-                   <select name="status" id="status" required>
+                 <div class="col-md-2" >
+                   <label for="status">* Status:</label></div>
+                    <div class="col-md-8">
+                   <select name="status" id="status" class="form-control" required>
                     <option value = " ">Select One</option>
                     <option value = "Hot">Hot</option>
                     <option value = "Warm">Warm</option>
@@ -95,6 +103,7 @@ if(isset($_SESSION['valid_user']))
                     </select>
                 </div>
             </div>  
+
 
             <div class="row">
             	<div class="col">
