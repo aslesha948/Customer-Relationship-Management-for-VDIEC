@@ -15,7 +15,8 @@ echo $number;
 
 $address = $_POST['address'];
 echo $address;
-$sql= "insert into users (user_id, name, email, password, number, Address) values ('$user_id', '$name', '$email', '$password', '$number', '$address')";
+$sql= "insert into users (user_id, name, email, password, number, Address) 
+		values ('$user_id', '$name', '$email', '$password', '$number', '$address')";
 echo $sql."<br>";
             if(mysqli_query($con,$sql))
             { 
