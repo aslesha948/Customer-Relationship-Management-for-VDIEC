@@ -28,6 +28,21 @@ if(isset($_SESSION['valid_user']))
 <div class="row">
   <div class="col">
 
+ <?php if(isset($_GET['suc']))
+{?>
+  <div class="alert alert-success">
+  <strong>Success!</strong> Comments updated succesfully
+</div>
+<?php } 
+
+ if(isset($_GET['err']))
+{?>
+  <div class="alert alert-warning">
+  <strong>Error!</strong> Please try again
+</div>
+<?php } 
+  ?>
+
 
 <p><a href="Add-Lead.php" class="button-red"> Add a new Lead </a></p>
 
@@ -55,6 +70,7 @@ echo "<table border='2'style='width:100%'>
 <th>Contact Number</th>
 <th>Email ID </th>
 <th>Status</th>
+<th>Action </th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -67,9 +83,16 @@ echo "<td>" . $row['Source'] . "</td>";
 echo "<td>" . $row['Contact'] . "</td>";
 echo "<td>" . $row['EmailID'] . "</td>";
 echo "<td>" . $row['Status'] . "</td>";
+echo "<td><button type=\"button\" class=\"btn btn-warning\" style=\"float:right\" ><a href=\"calling.php?lead_id=$leadid\">Assign the Lead</a></button></td>";
 
 echo "</tr>";
 
+//if(isset($_GET['lead']))
+   // {
+ //     $assign=$_GET['lead'];
+
+ //     $agn=mysqli_query($con,"DELETE FROM leads where lead_id='$assign'");
+ //   }
 }
  
 echo "</table>";
