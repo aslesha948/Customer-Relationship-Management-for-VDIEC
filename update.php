@@ -96,7 +96,13 @@ $records = mysqli_query($con,$sql);
  <div class="row">
       <div class="col-md-2" ><label>Status:</label></div>
       <div class="col-md-8">
-           <input type="Text" class="form-control" value="<?php echo $row['status'];?>" name="status">
+            <select name="status" class="form-control">
+              <option value="<?php echo $row['status'];?>">Present - <?php echo $row['status'];?></option>
+              <option value="Hot">Hot</option>
+              <option value="Warm">Warm</option>
+              <option value="Cold">Cold</option>
+            </select>
+           <!--<input type="Text" class="form-control" value="<?php echo $row['status'];?>" name="status"> -->
       </div>
     </div>
   <input type="hidden" name="cid" value="<?php echo $row['Id'];?>">
