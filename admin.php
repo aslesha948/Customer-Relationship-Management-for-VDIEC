@@ -2,6 +2,7 @@
 //must appear BEFORE the <html> tag
 session_start();
 include('config.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,32 @@ include('config.php');
 if(isset($_SESSION['valid_user']))
 {
   $email=$_SESSION['valid_user'];
+
+
+  $conn  = db_connect();
+
+  // //make a query to check if a valid user
+  $role_sql = "select role from users where email='$email'";
+
+  $result_role = $conn -> query($role_sql);
+
+
+  if ($result_role -> num_rows == 1) {
+           $row = $result_role -> fetch_assoc();
+           $role = $row['role'];
+
+          if($role == "admin" || $role == "manager"){
+
+          //  echo "This is working";
+  
+  //$role = "manager";
+
+ //  if ($result_role== "admin") {
+ //    echo "You are on the right track";
+ //  }
+ // else {echo "check again";}
+
+  
 ?>
 <div class="container">
 
@@ -39,8 +66,10 @@ if(isset($_SESSION['valid_user']))
   ?>
 
 
+<h1>Admin Management</h1>
+<p><a href="Add-User.php" class="button-red"> Add a new User </a></p> 
 
-<p><a href="Add-User.php" class="button-red"> Add a new User </a></p>
+<p><a href="Add-Student.php" class="button-red"> Create Student Login </a></p>
 
 </div>
 </div>
@@ -101,6 +130,24 @@ mysqli_close($con);
 </div>
 <!--Else it redirects to login page -->
 <?php }
+else{
+
+?><div class="container">
+
+<div class="row">
+  <div class="col">
+<?php 
+  echo "You do not have access to this page";
+?>
+
+</div>
+</div>
+</div>
+<?php 
+
+}
+}
+}
 else
 {
   header("location:index.php");
